@@ -137,8 +137,8 @@ class HiggsfieldAvatarNode:
             headers = self._build_headers(api_key)
             payload = {
                 "params": {
-                    "input_image": image_url,
-                    "input_audio": audio_url,
+                    "input_image": {"url": image_url},
+                    "input_audio": {"url": audio_url},
                     "prompt": prompt,
                     "quality": quality,
                     "duration": int(duration),
