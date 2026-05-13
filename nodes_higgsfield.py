@@ -8,7 +8,7 @@ import requests
 from PIL import Image
 
 
-BASE_URL = "https://cloud.higgsfield.ai"
+BASE_URL = "https://platform.higgsfield.ai"
 POLL_INTERVAL = 5
 MAX_POLLS = 120
 
