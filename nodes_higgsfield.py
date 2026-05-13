@@ -151,10 +151,9 @@ class HiggsfieldAvatarNode:
                 timeout=60,
             )
             print(f"[Higgsfield] Response status: {resp.status_code}")
-            print(f"[Higgsfield] Response body: {resp.text[:500]}")
-            resp.raise_for_status()
+           if not resp.ok:
+               raise RuntimeError(f"Higgsfield API error {resp.status_code}: {resp.text[:1000]}")
             result = resp.json()
-
             request_id = (
                 result.get("request_id")
                 or result.get("id")
